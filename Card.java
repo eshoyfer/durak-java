@@ -105,6 +105,36 @@ public class Card implements Comparable {
 		return thisValue - otherValue;
 	}
 
+	// Comparison accounting for trump
+	// Accepts trump parameter (part of game state)
+	public int trueCompareTo(Object o, String t) {
+
+		Card otherCard = (Card) o; 
+
+		boolean thisCardIsTrump = this.isTrump(t);
+		boolean otherCardIsTrump = otherCard.isTrump(t);
+
+		int valueDifference = this.compareTo(o);
+
+		if (thisCardIsTrump && otherCardIsTrump) {
+			return valueDifference;
+		} else if (thisCardIsTrump && !otherCardIsTrump) {
+			return 1;
+		} else if (!thisCardIsTrump && otherCardIsTrump) {
+			return -1;
+		} else if (sameSuit(o)) {
+			return valueDifference;
+		} else {
+			// Different suit; cannot occur based on game rules
+			throw new IllegalArgumentException("Different suit");
+		}
+
+	}
+
+	public int trueCompareTo(Object o) {
+		return trueCompareTo(o, Durak.TRUMP);
+	}
+
 	// Accepts trump parameter (part of game state)
 	public boolean isTrump(String t) {
 
