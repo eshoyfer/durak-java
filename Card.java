@@ -156,4 +156,23 @@ public class Card implements Comparable {
 		return thisSuit.equals(otherSuit);
 	}
 
+	public String getSuit() {
+		return suit;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public String getRank() {
+		return rank;
+	}
+
+	public int getValue() {
+		return values.get(rank);
+	}
+
+	// Cards are supposed to be immutable 
+	// No setter methods
+
 }
