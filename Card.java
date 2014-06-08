@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import cardstatic.*;
 
 public class Card implements Comparable {
 
@@ -9,7 +10,7 @@ public class Card implements Comparable {
 
 	private Random r = new Random();
 
-	// In Durak, the playing cards ranked 2-5 are not used.
+		// In Durak, the playing cards ranked 2-5 are not used.
 
 	// Rank constants:
 
@@ -65,22 +66,22 @@ public class Card implements Comparable {
 	public Card() {
 
 		int randRankIndex = r.nextInt(9);
-		rank = ranks[randRankIndex];
+		rank = Static.ranks[randRankIndex];
 
 		int randSuitIndex = r.nextInt(4);
-		suit = suits[randSuitIndex];
+		suit = Static.suits[randSuitIndex];
 
-		color = colors.get(suit);
+		color = Static.colors.get(suit);
 
 	}
 
 	// Create a card with specified rank, suit
 	public Card(String r, String s) {
 
-		if (Arrays.asList(ranks).contains(r) && Arrays.asList(suits).contains(s)) {
+		if (Arrays.asList(Static.ranks).contains(r) && Arrays.asList(Static.suits).contains(s)) {
 			rank = r;
 			suit = s;
-			color = colors.get(suit);
+			color = Static.colors.get(suit);
 		} else {
 			throw new IllegalArgumentException("Invalid rank or suit");
 		}
@@ -99,8 +100,8 @@ public class Card implements Comparable {
 
 		Card otherCard = (Card) o;
 
-		int thisValue = values.get(rank);
-		int otherValue = values.get(otherCard.rank);
+		int thisValue = Static.values.get(rank);
+		int otherValue = Static.values.get(otherCard.rank);
 
 		return thisValue - otherValue;
 	}
@@ -169,7 +170,7 @@ public class Card implements Comparable {
 	}
 
 	public int getValue() {
-		return values.get(rank);
+		return Static.values.get(rank);
 	}
 
 	// Cards are supposed to be immutable 
