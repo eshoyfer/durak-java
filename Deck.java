@@ -24,8 +24,18 @@ public class Deck {
 		}
 	}
 
+	// Take a care from the top.
+	// If empty stack, return null.
 	public Card draw() {
-		return cards.pop()
+		if (!isEmpty()) {
+			return cards.pop();
+		} else {
+			return null;
+		}
+	}
+
+	public boolean isEmpty() {
+		return cards.empty();
 	}
 
 	public int size() {
