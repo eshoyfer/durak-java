@@ -4,7 +4,7 @@ import cardstatic.*;
 
 public class Driver {
 	public static void main(String[] args) {
-		Deck d = new Deck();
-		System.out.println(d);
+		Hand h = new Hand(5)
+		System.out.println(h);
 	}
 }
