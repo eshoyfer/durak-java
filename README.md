@@ -64,17 +64,17 @@ Prior to the start of the next round, the attacker replenishes his cards first, 
 
 Data was modelled from the ground up in order of increasing complexity.
 
-Classes include 'Card', 'Deck', 'Hand', 'Player', 'Pair', and 'Field'.
+Classes include `Card`, `Deck`, `Hand`, `Player`, `Pair`, and `Field`.
 
-There is a 'Static' class under package 'cardstatic' that governs the behavior of cards.
+There is a `Static` class under package 'cardstatic' that governs the behavior of cards.
 
-'Durak' contains the components that regulate gameplay.
-'Driver' runs the game by instantiating the Durak class, triggering the start of the game.
+`Durak` contains the components that regulate gameplay.
+`Driver` runs the game by instantiating the Durak class, triggering the start of the game.
 
-Examples of 2nd term data structures: 'HashMap' in 'Static', 'Stack' in 'Deck'
+Examples of 2nd term data structures: `HashMap` in `Static`, `Stack` in `Deck`
 
 #### Running
 
-Compile all files with 'javac *.java' and run 'java Driver'.
+Compile all files with `javac *.java` and run `java Driver`.
 
 The game will initially prompt you for names of the players followed by numerical input for actual gameplay.
