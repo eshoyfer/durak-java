@@ -52,6 +52,16 @@ public class Hand {
 		return cards;
 	}
 
+	// Here, i represents true zero-based index.
+
+	public Card getCardByIndex(int i) {
+		return cards.get(i);
+	}
+
+	public Card useCardByIndex(int i) {
+		return cards.remove(i);
+	}
+
 	@Override
 	public String toString() {
 		String ret = new String();

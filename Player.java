@@ -116,6 +116,23 @@ public class Player {
 	public String toString() {
 		return name;
 	}
+
+	// *** For turn-making purposes ***
+
+	// Hand ArrayList index-based retrieval for making turns in the command line
+	// Here, i represents a natural number as referred to during the game.
+	// It is reduced by one to zero-based and passed in that form to Hand,
+	// which takes zero-based inputs.
+
+	public Card getCard(int i) {
+		return hand.getCardByIndex(i - 1);
+	}
+
+	public Card useCard(int i) {
+		return hand.useCardByIndex(i - 1);
+	}
+
+	// Counter corresponds to (ArrayList index + 1)
 	public String cardList() {
 		String ret = "\n=== YOUR CARDS ===\n";
 		ArrayList<Card> cards = hand.getCards();
